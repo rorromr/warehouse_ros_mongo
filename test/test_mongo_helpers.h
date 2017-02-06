@@ -50,24 +50,6 @@ inline bool operator==(const Pose& p1, const Pose& p2)
 
 }
 
-inline MongoMetadata& downcastMetadata(Metadata::ConstPtr metadata) const {
-  return *(const_cast<MongoMetadata*>(static_cast<const MongoMetadata*>(metadata.get())));
-}
-
-inline MongoQuery& downcastQuery(Query::ConstPtr query) const {
-  return *(const_cast<MongoQuery*>(static_cast<const MongoQuery*>(query.get())));
-}
-
-template <class T>
-ostream& operator<<(ostream& str, const warehouse_ros::MessageWithMetadata<T>& s)
-{
-  const T& msg = s;
-  str << "Message: " << msg;
-  str << "\nMetadata: " << downcastMetadata(s.metadata).toString();
-  return str;
-}
-
-
 geometry_msgs::Quaternion createQuaternionMsgFromYaw(double yaw)
 {
   geometry_msgs::Quaternion q;
