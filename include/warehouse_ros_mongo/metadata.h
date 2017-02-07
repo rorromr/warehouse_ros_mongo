@@ -122,6 +122,7 @@ public:
   void append(const std::string& name,
               const std::string& val)
   {
+    ROS_DEBUG_STREAM("Append string: " << name << ", " << val);
     *builder_ << name << val;
     WrappedBSON::update();
   }
@@ -129,6 +130,7 @@ public:
   void append(const std::string& name,
               const double val)
   {
+    ROS_DEBUG_STREAM("Append double: " << name << ", " << val);
     *builder_ << name << val;
     WrappedBSON::update();
   }
@@ -136,6 +138,7 @@ public:
   void append(const std::string& name,
               const int val)
   {
+    ROS_DEBUG_STREAM("Append int: " << name << ", " << val);
     *builder_ << name << val;
     WrappedBSON::update();
   }
@@ -143,6 +146,7 @@ public:
   void append(const std::string& name,
               const bool val)
   {
+    ROS_DEBUG_STREAM("Append bool: " << name << ", " << val);
     *builder_ << name << val;
     WrappedBSON::update();
   }
@@ -150,6 +154,7 @@ public:
   void appendLT(const std::string& name,
                 const double val)
   {
+    ROS_DEBUG_STREAM("Append LT double: " << name << ", " << val);
     *builder_ << name << mongo::LT << val;
     WrappedBSON::update();
   }
@@ -157,6 +162,7 @@ public:
   void appendLT(const std::string& name,
                 const int val)
   {
+    ROS_DEBUG_STREAM("Append LT string: " << name << ", " << val);
     *builder_ << name << mongo::LT << val;
     WrappedBSON::update();
   }
@@ -164,6 +170,7 @@ public:
   void appendLTE(const std::string& name,
                  const double val)
   {
+    ROS_DEBUG_STREAM("Append LTE double: " << name << ", " << val);
     *builder_ << name << mongo::LTE << val;
     WrappedBSON::update();
   }
@@ -171,6 +178,7 @@ public:
   void appendLTE(const std::string& name,
                  const int val)
   {
+    ROS_DEBUG_STREAM("Append LTE int: " << name << ", " << val);
     *builder_ << name << mongo::LTE << val;
     WrappedBSON::update();
   }
@@ -178,6 +186,7 @@ public:
   void appendGT(const std::string& name,
                 const double val)
   {
+    ROS_DEBUG_STREAM("Append GT double: " << name << ", " << val);
     *builder_ << name << mongo::GT << val;
     WrappedBSON::update();
   }
@@ -185,6 +194,7 @@ public:
   void appendGT(const std::string& name,
                 const int val)
   {
+    ROS_DEBUG_STREAM("Append GT double: " << name << ", " << val);
     *builder_ << name << mongo::GT << val;
     WrappedBSON::update();
   }
@@ -192,6 +202,7 @@ public:
   void appendGTE(const std::string& name,
                  const double val)
   {
+    ROS_DEBUG_STREAM("Append GTE double: " << name << ", " << val);
     *builder_ << name << mongo::GTE << val;
     WrappedBSON::update();
   }
@@ -199,6 +210,7 @@ public:
   void appendGTE(const std::string& name,
                  const int val)
   {
+    ROS_DEBUG_STREAM("Append GTE int: " << name << ", " << val);
     *builder_ << name << mongo::GTE << val;
     WrappedBSON::update();
   }
@@ -207,6 +219,7 @@ public:
                    const double lower,
                    const double upper)
   {
+    ROS_DEBUG_STREAM("Append range double: " << name << " from " << lower << " to " << upper);
     *builder_ << name << mongo::GT << lower << mongo::LT << upper;
     WrappedBSON::update();
   }
@@ -215,6 +228,7 @@ public:
                    const int lower,
                    const int upper)
   {
+    ROS_DEBUG_STREAM("Append range int: " << name << " from " << lower << " to " << upper);
     *builder_ << name << mongo::GT << lower << mongo::LT << upper;
     WrappedBSON::update();
   }
@@ -223,6 +237,7 @@ public:
                             const double lower,
                             const double upper)
   {
+    ROS_DEBUG_STREAM("Append range double inclusive: " << name << " from " << lower << " to " << upper);
     *builder_ << name << mongo::GTE << lower << mongo::LTE << upper;
     WrappedBSON::update();
   }
@@ -231,6 +246,7 @@ public:
                             const int lower,
                             const int upper)
   {
+    ROS_DEBUG_STREAM("Append range int inclusive: " << name << " from " << lower << " to " << upper);
     *builder_ << name << mongo::GTE << lower << mongo::LTE << upper;
     WrappedBSON::update();
   }
