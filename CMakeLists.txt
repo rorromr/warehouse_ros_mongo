@@ -4,6 +4,7 @@ project(warehouse_ros_mongo)
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 
 find_package(catkin REQUIRED
+  pluginlib
   roscpp
   rostest
   rostime
